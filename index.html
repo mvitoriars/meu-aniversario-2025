@@ -33,10 +33,6 @@
         body {
             font-family: 'Nunito', sans-serif;
             background-color: var(--cor-fundo);
-            background-image: url('background.png');
-            background-repeat: repeat-x;
-            background-size: contain;
-            background-attachment: fixed;
             color: #333;
             padding: 20px;
             display: flex;
@@ -224,23 +220,36 @@
         .importante-texto {
             flex: 1 1 60%;
             text-align: justify;
-            margin-left: 50px;
+            margin-left: 10px;
         }
 
         .importante-imagem {
             flex: 1 1 30%;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .importante-imagem img {
-            width: 120px;
+            width: 80px;
             max-width: 180px;
             height: auto;
             border-radius: 16px;
         }
-        
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+            z-index: -1;
+            /* fica atrás de todo o conteúdo */
+        }
     </style>
 
     <script>
@@ -307,7 +316,7 @@
         <div class="importante-conteudo">
             <div class="importante-texto">
                 <p class="info-item">📅 Data: 01 de novembro de 2025</p>
-                <p class="info-item">🕓 Horário: 15h às 18h</p>
+                <p class="info-item">🕓 Horário: 15h às 19h</p>
                 <p class="info-item">📍 Local: Rod. Mábio Gonçalves Palhano, 3350</p>
             </div>
             <div class="importante-imagem">
@@ -334,7 +343,8 @@
                     sabão.
                     O espaço conta com vestiários para troca de roupa — lembre-se de levar
                     <strong>uma troca extra</strong>, <strong>toalha</strong>, <strong>protetor solar</strong>,
-                    <strong>chapéu</strong>, <strong>óculos de sol</strong>, <strong>chinelos</strong>, <strong>bóia</strong>, etc.
+                    <strong>chapéu</strong>, <strong>óculos de sol</strong>, <strong>chinelos</strong>,
+                    <strong>bóia</strong>, etc.
                 </p>
             </div>
 
