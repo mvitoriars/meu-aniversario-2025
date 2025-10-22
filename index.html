@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria Vitória 8 anos</title>
+
+    <!-- Fonte Questrial (texto geral) -->
+    <link href="https://fonts.googleapis.com/css2?family=Questrial:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- Fonte Playwrite US Modern (informações) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-principal: #c0dcf8;
+            --cor-secundaria: #ffdfff;
+            --cor-destaque: #feeca0;
+            --cor-terra: #612500;
+            --cor-fundo: #fffaf7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--cor-fundo);
+            background-image: url('background.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-attachment: fixed;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img,
+        footer img {
+            width: 100%;
+            height: auto;
+            max-width: 900px;
+            border-radius: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            background: rgba(255, 250, 247, 0.6);
+        }
+
+        .panel {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .panel h2 {
+            font-family: 'Playwrite US Modern', sans-serif;
+            font-weight: 600;
+            color: var(--cor-terra);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        /* Ajuste específico para os parágrafos e listas dentro dos painéis */
+        .panel p,
+        .panel li {
+            font-size: 1.1rem;
+        }
+
+        .info-item {
+            font-family: 'Playwrite US Modern', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        .curiosidades ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .curiosidades li {
+            list-style: none;
+            position: relative;
+            padding-left: 36px;
+            /* espaço pro ícone */
+            margin-bottom: 8px;
+        }
+
+        .curiosidades li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 24px;
+            height: 24px;
+            background-image: url('capybara_2.png');
+            /* substitua pelo seu arquivo */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        iframe {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            height: 400px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .panel {
+                padding: 16px;
+            }
+
+            iframe {
+                height: 200px;
+            }
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 12px 24px;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #25d366;
+            font-family: 'Playwrite US Modern', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 40px;
+            box-shadow: 0 3px 8px rgba(37, 211, 102, 0.25);
+            transition: all 0.2s ease-in-out;
+            width: 50%;
+        }
+
+        .whatsapp-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebc59;
+            transform: scale(1.04);
+            box-shadow: 0 5px 10px rgba(37, 211, 102, 0.35);
+        }
+
+        @media (max-width: 200px) {
+            .whatsapp-btn {
+                font-size: 0.95rem;
+                padding: 8px 14px;
+
+            }
+
+            .whatsapp-btn img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        /* Botão flutuante "Voltar ao topo" */
+        #btnTopo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 100;
+            background-color: var(--cor-terra);
+            color: #fffaf7;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            /* escondido por padrão */
+            transition: all 0.3s ease;
+        }
+
+        #btnTopo:hover {
+            transform: scale(1.1);
+            background-color: #7a3b16;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const btn = document.getElementById("btnTopo");
+
+            // Mostrar o botão após rolar 200px
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            });
+
+            // Rolagem suave até o topo
+            btn.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <header>
+        <!-- Substitua pela imagem com o nome da aniversariante -->
+        <img src="header.png" alt="Convite da Maria Vitória" />
+    </header>
+
+    <section class="panel">
+        <h2>Sua presença é mais do que especial!</h2>
+        <p> Vamos comemorar o <strong>aniversário de 8 anos da Maria Vitória</strong>, e será uma alegria ter você com a
+            gente!</p>
+        <p>Por favor, confirme sua presença até o dia <strong>28 de outubro</strong>.</p>
+
+
+        <div style="text-align: center;">
+            <a href="https://wa.me/5543996465720?text=Ol%C3%A1%21%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20anivers%C3%A1rio%20da%20Maria%20Vit%C3%B3ria%2C%20que%20ser%C3%A1%20no%20dia%201%20de%20novembro%20%28s%C3%A1bado%29%2C%20%C3%A0s%2015h.%0ARespons%C3%A1vel%3A%0ACrian%C3%A7a%3A"
+                class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+                Confirmar Presença
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Seção: Informações -->
+    <section class="panel">
+        <h2>🎉 Informações</h2>
+        <p class="info-item">📅 Data: 01 de novembro de 2025</p>
+        <p class="info-item">🕓 Horário: 15h às 19h</p>
+        <p class="info-item">📍 Local: Rod. Mábio Gonçalves Palhano, 3350</p>
+        <iframe title="Localização da festa no Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.273281372596!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5d1fd6e5744f%3A0xe1896f94f5c89113!2sANSEF%20Londrina!5e0!3m2!1sen!2sbr!4v1748311097715!5m2!1sen!2sbr"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- Seção: Importante -->
+    <section class="panel">
+        <h2>⚠️ Importante</h2>
+        <p>
+            Para a <strong>segurança e o conforto de todos</strong>, cada criança deve estar acompanhada por
+            <strong>um adulto responsável</strong> durante toda a festa.
+        </p>
+        <p>
+            Caso o dia esteja quente, teremos <strong>atividades com água</strong>, como piscina e futebol de sabão.
+            O espaço conta com vestiários para troca de roupa — lembre-se de levar
+            <strong>uma muda extra</strong>, <strong>toalha</strong>, <strong>protetor solar</strong>,
+            <strong>chapéu</strong> e <strong>chinelos</strong>.
+        </p>
+    </section>
+
+
+    <!-- Seção: Curiosidades sobre a Mavi -->
+    <section class="panel curiosidades">
+        <h2>💚 Curiosidades sobre a Maria Vitória</h2>
+        <ul>
+            <li>Adora observar e fotografar <strong>animais</strong> e a <strong>natureza</strong>.</li>
+            <li>É muito <strong>vaidosa</strong> e ama se produzir.</li>
+            <li>É <strong>vegetariana</strong> e sua comida favorita é <strong>macarrão ao sugo com muito
+                    queijo</strong>.</li>
+            <li>Ama praticar <strong>esportes</strong>, <strong>dançar</strong> e <strong>mover o corpo</strong>.</li>
+            <li>Suas cores favoritas são <strong>verde</strong> e <strong>azul</strong>.</li>
+            <li>Ela calça <strong>32</strong> e veste <strong>tamanho 10</strong>.</li>
+            <li>Suas brincadeiras favoritas são <strong>pega-pega</strong> e <strong>pular corda</strong>.</li>
+            <li>Seus personagens favoritos são <strong>Legolas</strong> e <strong>Aragorn</strong> (<em>O Senhor dos
+                    Anéis</em>), <strong>Bluey</strong> e <strong>Bingo</strong>, além de todos da <strong>Pedra do
+                    Papagaio do Mar</strong>.</li>
+        </ul>
+    </section>
+
+
+    <!-- Seção: Tema da festa -->
+    <section class="panel">
+        <h2>🌿 Tema da festa: Capivara</h2>
+        <p>
+            As capivaras são os maiores roedores do mundo!
+            Para entrar no clima da festa, assista a este vídeo com curiosidades sobre este animal tão amável!
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2G4gh5gzMb4?si=4sh_dUC57fny4_aw"
+            title="Vídeo sobre capivaras" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </section>
+
+    <footer>
+        <img src="footer.png" alt="Convite da Maria Vitória" />
+    </footer>
+
+
+    <button id="btnTopo" title="Voltar ao topo">⬆️</button>
+</body>
+
+</html>
