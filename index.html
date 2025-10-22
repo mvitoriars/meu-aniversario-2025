@@ -62,6 +62,10 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-top: 10px;
             background: rgba(255, 250, 247, 0.6);
+<<<<<<< HEAD
+            background: transparent;
+=======
+>>>>>>> b82469dcb9117bfaea74d662d4edfc6c7b77b215
         }
 
         .panel {
@@ -210,6 +214,36 @@
             transform: scale(1.1);
             background-color: #7a3b16;
         }
+
+        .importante-conteudo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            /* garante que se adapte em telas menores */
+        }
+
+        .importante-texto {
+            flex: 1 1 60%;
+            text-align: justify;
+            margin-left: 50px;
+        }
+
+        .importante-imagem {
+            flex: 1 1 30%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .importante-imagem img {
+            width: 120px;
+            max-width: 180px;
+            height: auto;
+            border-radius: 16px;
+        }
+        
     </style>
 
     <script>
@@ -241,14 +275,22 @@
 <body>
     <header>
         <!-- Substitua pela imagem com o nome da aniversariante -->
-        <img src="header.png" alt="Convite da Maria Vitória" />
+        <img src="header.png" alt="Maria Vitória faz 8 anos" />
     </header>
 
-    <section class="panel">
+    <section class="panel importante">
         <h2>Sua presença é mais do que especial!</h2>
-        <p> Vamos comemorar o <strong>aniversário de 8 anos da Maria Vitória</strong>, e será uma alegria ter você com a
-            gente!</p>
-        <p>Por favor, confirme sua presença até o dia <strong>28 de outubro</strong>.</p>
+        <div class="importante-conteudo">
+            <div class="importante-texto">
+                <p> Vamos comemorar o <strong>aniversário de 8 anos da Maria Vitória</strong>, e será uma alegria ter
+                    você com a
+                    gente!</p>
+                <p>Por favor, confirme sua presença até o dia <strong>28 de outubro</strong>.</p>
+            </div>
+            <div class="importante-imagem">
+                <img src="capybara_4.png" alt="Capivara tomando banho na tina">
+            </div>
+        </div>
 
 
         <div style="text-align: center;">
@@ -262,11 +304,19 @@
     </section>
 
     <!-- Seção: Informações -->
-    <section class="panel">
+    <section class="panel importante">
         <h2>🎉 Informações</h2>
-        <p class="info-item">📅 Data: 01 de novembro de 2025</p>
-        <p class="info-item">🕓 Horário: 15h às 19h</p>
-        <p class="info-item">📍 Local: Rod. Mábio Gonçalves Palhano, 3350</p>
+
+        <div class="importante-conteudo">
+            <div class="importante-texto">
+                <p class="info-item">📅 Data: 01 de novembro de 2025</p>
+                <p class="info-item">🕓 Horário: 15h às 19h</p>
+                <p class="info-item">📍 Local: Rod. Mábio Gonçalves Palhano, 3350</p>
+            </div>
+            <div class="importante-imagem">
+                <img src="capybara_5.png" alt="Capivara andando de skate">
+            </div>
+        </div>
         <iframe title="Localização da festa no Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.273281372596!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb5d1fd6e5744f%3A0xe1896f94f5c89113!2sANSEF%20Londrina!5e0!3m2!1sen!2sbr!4v1748311097715!5m2!1sen!2sbr"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -274,19 +324,29 @@
     </section>
 
     <!-- Seção: Importante -->
-    <section class="panel">
+    <section class="panel importante">
         <h2>⚠️ Importante</h2>
-        <p>
-            Para a <strong>segurança e o conforto de todos</strong>, cada criança deve estar acompanhada por
-            <strong>um adulto responsável</strong> durante toda a festa.
-        </p>
-        <p>
-            Caso o dia esteja quente, teremos <strong>atividades com água</strong>, como piscina e futebol de sabão.
-            O espaço conta com vestiários para troca de roupa — lembre-se de levar
-            <strong>uma muda extra</strong>, <strong>toalha</strong>, <strong>protetor solar</strong>,
-            <strong>chapéu</strong> e <strong>chinelos</strong>.
-        </p>
+        <div class="importante-conteudo">
+            <div class="importante-texto">
+                <p>
+                    Para a <strong>segurança e o conforto de todos</strong>, cada criança deve estar acompanhada por
+                    <strong>um adulto responsável</strong> durante toda a festa.
+                </p>
+                <p>
+                    Caso o dia esteja quente, teremos <strong>atividades com água</strong>, como piscina e futebol de
+                    sabão.
+                    O espaço conta com vestiários para troca de roupa — lembre-se de levar
+                    <strong>uma troca extra</strong>, <strong>toalha</strong>, <strong>protetor solar</strong>,
+                    <strong>chapéu</strong>, <strong>óculos de sol</strong>, <strong>chinelos</strong>, <strong>bóia</strong>, etc.
+                </p>
+            </div>
+
+            <div class="importante-imagem">
+                <img src="capybara_3.png" alt="Capivara embaixo do guarda-sol">
+            </div>
+        </div>
     </section>
+
 
 
     <!-- Seção: Curiosidades sobre a Mavi -->
@@ -299,7 +359,7 @@
                     queijo</strong>.</li>
             <li>Ama praticar <strong>esportes</strong>, <strong>dançar</strong> e <strong>mover o corpo</strong>.</li>
             <li>Suas cores favoritas são <strong>verde</strong> e <strong>azul</strong>.</li>
-            <li>Ela calça <strong>32</strong> e veste <strong>tamanho 10</strong>.</li>
+            <li>Ela calça <strong>tamanho 32</strong> e veste <strong>tamanho 10</strong>.</li>
             <li>Suas brincadeiras favoritas são <strong>pega-pega</strong> e <strong>pular corda</strong>.</li>
             <li>Seus personagens favoritos são <strong>Legolas</strong> e <strong>Aragorn</strong> (<em>O Senhor dos
                     Anéis</em>), <strong>Bluey</strong> e <strong>Bingo</strong>, além de todos da <strong>Pedra do
@@ -313,6 +373,8 @@
         <h2>🌿 Tema da festa: Capivara</h2>
         <p>
             As capivaras são os maiores roedores do mundo!
+        </p>
+        <p>
             Para entrar no clima da festa, assista a este vídeo com curiosidades sobre este animal tão amável!
         </p>
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2G4gh5gzMb4?si=4sh_dUC57fny4_aw"
@@ -323,7 +385,7 @@
     </section>
 
     <footer>
-        <img src="footer.png" alt="Convite da Maria Vitória" />
+        <img src="footer.png" alt="Até breve!" />
     </footer>
 
 
