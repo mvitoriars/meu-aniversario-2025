@@ -246,9 +246,22 @@
             height: 100%;
             background-image: url('background.png');
             background-repeat: repeat-x;
-            background-size: cover; /* cobre toda a tela */
+            background-size: contain;
+            /* desktop */
+            background-position: top center;
             z-index: -1;
-            pointer-events: none; /* evita interferir nos cliques */
+            pointer-events: none;
+            /* evita interferir em cliques */
+        }
+
+        /* Ajuste específico para celulares */
+        @media (max-width: 768px) {
+            body::before {
+                background-size: cover;
+                /* cobre toda a tela */
+                background-repeat: no-repeat;
+                background-position: center top;
+            }
         }
     </style>
 
